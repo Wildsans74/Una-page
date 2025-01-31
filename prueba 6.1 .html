@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Romántica</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+        
+        body {
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+            transition: background-color 0.5s;
+        }
+        .animated-text {
+            font-size: 4.5em;
+            font-weight: bold;
+            color: #FFDF00;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: fadeInSlide 2s ease-out forwards;
+        }
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .button {
+            margin-top: 40px;
+            padding: 20px 40px;
+            font-size: 1.2em;
+            background-color: #C71585;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .button:hover {
+            background-color: #A52A2A;
+            transform: scale(1.1);
+        }
+        .image-container {
+            margin-top: 20px;
+            display: none;
+        }
+        .image-container img {
+            width: 400px;
+            border-radius: 10px;
+        }
+        .love-message {
+            font-size: 2em;
+            color: #87CEEB;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            margin-top: 20px;
+        }
+        #surprise-content {
+            display: none;
+        }
+    </style>
+	<link rel= "stylesheet" href= "Video.css">
+</head>
+<body>
+
+    <video class="video-background" autoplay muted loop>
+	    <source src="C:\Users\bibli\Downloads\Relajarse Relax - Sonido Olas del Mar - Playa Atardecer HD.mp4" type="video/mp4">
+	</video>
+	
+    <div class="animated-text">¿Quieres una sorpresa?</div>
+    <button class="button" onclick="showSurprise()">Sí</button>
+    <button class="button" onclick="closePage()">No</button>
+    
+    <div id="surprise-content">
+        <div class="image-container" id="image-container">
+            <img src="C:\Users\bibli\Downloads\paisaje-e1549600034372.jpg" alt="Imagen de amor">
+        </div>
+        <audio controls autoplay>
+            <source src="C:\Users\bibli\Downloads\Hoobastank - The Reason (Lyrics).mp3" type="audio/mpeg">
+        </audio>
+        <p id="love-message" class="love-message">El dia que te conoci, no esperaba conocer a nadie sin embargo apareciste<br>
+		formaste parte de mi vida, y ahora que estas aqui no te quiero dejar ir<br>
+		siempre eres valiente y me gusta verte sonreir, gracias a ti empeza a ver la vida con otro color
+		<br>Te quedo lindo el detalle de aparecer en mi vida, y ahora que estas en ella no quiero que te vayas<br>
+		Gracias por estar mi vida, no te vayas nunca porfa
+		</p>
+    </div>
+    
+    <script>
+        function showSurprise() {
+            let surpriseContent = document.getElementById("surprise-content");
+            let loveMessage = document.getElementById("love-message");
+            let imageContainer = document.getElementById("image-container");
+            
+            surpriseContent.style.display = "block";
+            loveMessage.style.opacity = "1";
+            loveMessage.style.transform = "scale(1)";
+            imageContainer.style.display = "block";
+        }
+        function closePage() {
+            window.close();
+        }
+    </script>
+</body>
+</html>
